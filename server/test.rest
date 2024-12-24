@@ -1,0 +1,53 @@
+### GET projects
+GET http://localhost:8000/projects
+
+### POST projects
+POST http://localhost:8000/projects
+Content-Type: application/json
+
+{
+    "name": "New Project",
+    "description": "This is description for a new project",
+    "startDate": "2024-11-01T00:00:00Z",
+    "endDate": "2025-02-01T00:00:00Z"
+}
+
+### GET tasks
+GET http://localhost:8000/tasks?projectId=1
+
+### POST tasks
+POST http://localhost:8000/tasks
+Content-Type: application/json
+
+{
+    "title": "New Task",
+    "description": "This is new task description",
+    "status": "To Do",
+    "priority": "High",
+    "tags": "Deployment",
+    "startDate": "2024-11-15T00:00:00Z",
+    "dueDate": "2024-12-01T00:00:00Z",
+    "projectId": "1",
+    "authorUserId": "2",
+    "assignedUserId": "4",
+}
+
+### PATCH task
+PATCH http://localhost:8000/tasks/41/status
+Content-Type: application/json
+
+{
+    "status": "Work In Progress"
+}
+
+### GET search
+GET http://localhost:8000/search?query=task
+
+### GET users
+GET http://localhost:8000/users
+
+### GET teams
+GET http://localhost:8000/teams
+
+### GET user's tasks
+GET http://localhost:8000/tasks/user/1
